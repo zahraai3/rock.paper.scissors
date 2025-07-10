@@ -25,14 +25,17 @@ function playRound(humanChoice, compChoice) {
 
   if (humanChoice === compChoice) {
     console.log("a draw! both chose" + humanChoice);
-  } else if (
+  } 
+  else if (
     (humanChoice === "rock" && compChoice === "scissors") ||
     (humanChoice === "scissors" && compChoice === "paper") ||
     (humanChoice === "paper" && compChoice === "rock")
-  ) {
+  )
+   {
     humanScore++;
     console.log(`You won! ${humanChoice} beats ${compChoice}`);
-  } else {
+  }
+   else {
     compScore++;
     console.log(`Computer won! ${compChoice} beats ${humanChoice}`);
   }
@@ -44,6 +47,8 @@ function playGame(){
         const humanChoice=getHumanChoice();
         const compChoice=getComputerChoice();
 
-        console.log(playRound(humanChoice,compChoice));
+        playRound(humanChoice,compChoice);
     }
+    console.log(`Final Score - You: ${humanScore}, Computer: ${compScore}`);
+
 }
