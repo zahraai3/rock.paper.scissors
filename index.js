@@ -52,3 +52,4 @@ function playGame(){
     console.log(`Final Score - You: ${humanScore}, Computer: ${compScore}`);
 
 }
+playGame();
