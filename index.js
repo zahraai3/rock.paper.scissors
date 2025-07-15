@@ -11,11 +11,7 @@
     }
 }
 
-function getHumanChoice(){
 
-    let humanChois=prompt("Enter your choice:(rock,paper,scissors)");
-    return humanChois;
-}
  
 let compScore=0;
 let humanScore=0;
@@ -41,15 +37,40 @@ function playRound(humanChoice, compChoice) {
   }
 }
 
-function playGame(){
-    for(let i=0;i<5;i++)
-    {
-        const humanChoice=getHumanChoice();
-        const compChoice=getComputerChoice();
+const scoreDiv = document.getElementById('score');
+const resultsDiv = document.getElementById('results');
 
-        playRound(humanChoice,compChoice);
-    }
-    console.log(`Final Score - You: ${humanScore}, Computer: ${compScore}`);
 
+document.getElementById('rock').addEventListener('click',()=>{
+  playRound('rock',getComputerChoice());
+  updateScore();
+});
+
+document.getElementById('paper').addEventListener('click',()=>{
+  playRound('paper',getComputerChoice());
+  updateScore();
+});
+
+document.getElementById('scissors').addEventListener('click', () => {
+  playRound('scissors', getComputerChoice());
+  updateScore();
+});
+
+
+
+function updateScore(){
+  scoreDiv.textContent =`Human: ${humanScore}|Computer: ${compScore}`;
+  if (humanScore===5 || compScore===5){
+        resultsDiv.textContent += humanScore === 5 ? " You won the game!" : " Computer won the game!";
+       disableButtons();
+
+  }
 }
-playGame();
+
+function disableButtons() {
+  document.getElementById('rock').disabled = true;
+  document.getElementById('paper').disabled = true;
+  document.getElementById('scissors').disabled = true;
+}
+
+

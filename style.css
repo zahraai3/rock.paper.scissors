@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #9273a8, #e7d891); /* خلفية بنفسجية متدرجة */
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+#game {
+  background: linear-gradient(135deg, #bd86e4, #4f3d60); /* لون بنفسجي متدرج للصندوق */
+  padding: 30px 50px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(44, 24, 62, 0.7);
+  text-align: center;
+  width: 350px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+button {
+  background-color: #b266ff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  padding: 12px 30px;
+  margin: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+   padding: 12px 30px;
+  width: auto;
+}
+
+
+
+button:hover:enabled {
+  background-color: #d19aff;
+}
+
+button:disabled {
+  background-color: #5a2a72;
+  cursor: not-allowed;
+}
+
+#results {
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  min-height: 30px;
+}
+
+#score {
+  margin-top: 15px;
+  font-size: 18px;
+}
